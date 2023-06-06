@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <section id="input-section">
+      <div class="container">
+        <header>
+          <h1>Todo</h1>
+          <button class="theme-button" data-theme="light">
+            <img src="images/icon-moon.svg" alt="Change to dark mode" />
+          </button>
+        </header>
+
+        <!-- Task input -->
+        <form>
+          <input type="text" placeholder="Create a new todo..." data-add-task />
+        </form>
+      </div>
+    </section>
+
+    <section id="task-list-section">
+      <div class="container">
+        <!-- List of tasks -->
+        <ul class="task-list" data-task-list></ul>
+
+        <div>
+          <!-- Task count -->
+          <div class="task-count"><span data-task-count></span> items left</div>
+
+          <!-- Filter menu -->
+          <ul class="filter-menu">
+            <li data-filter="all">All</li>
+            <li data-filter="active">Active</li>
+            <li data-filter="completed">Completed</li>
+          </ul>
+
+          <!-- Clear task -->
+          <button class="clear-completed" data-clear-completed>
+            Clear Completed
+          </button>
+        </div>
+      </div>
+
+      <div class="container">
+        <ul class="filter-menu-mobile">
+          <li data-filter="all">All</li>
+          <li data-filter="active">Active</li>
+          <li data-filter="completed">Completed</li>
+        </ul>
+      </div>
+    </section>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
