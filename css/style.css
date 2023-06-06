@@ -1,7 +1,3 @@
-html {
-  font-size: 18px;
-}
-
 :root {
   /* App width */
   --container: 33.75rem;
@@ -13,6 +9,9 @@ html {
 
   /* Base font family */
   --ff-base: "Josefin Sans", sans-serif;
+
+  /* Font size */
+  font-size: 18px;
 
   /* Font weights */
   --fw-regular: 400;
