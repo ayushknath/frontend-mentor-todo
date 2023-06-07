@@ -131,6 +131,7 @@ ul {
 
 /* Task list section */
 #task-list-section {
+  min-height: calc(100vh - 324.4px);
   background-color: var(--neutral-100);
 }
 
