@@ -116,8 +116,10 @@ function setTheme() {
 function retrieveTheme() {
   const themeObject = JSON.parse(localStorage.getItem("theme"));
 
-  docBody.dataset.theme = themeObject.theme;
-  themeButton.children[0].setAttribute("src", themeObject.iconURL);
+  if (themeObject) {
+    docBody.dataset.theme = themeObject.theme;
+    themeButton.children[0].setAttribute("src", themeObject.iconURL);
+  }
 }
 
 const taskInput = document.querySelector("[data-add-task]");
