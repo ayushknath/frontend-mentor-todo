@@ -92,6 +92,34 @@ function filterCompleted() {
   });
 }
 
+function setTheme() {
+  const themeObject = {
+    theme: undefined,
+    iconURL: undefined,
+  };
+
+  if (docBody.dataset.theme === "light") {
+    docBody.dataset.theme = "dark";
+    themeButton.children[0].setAttribute("src", "images/icon-sun.svg");
+    themeObject.theme = "dark";
+    themeObject.iconURL = "images/icon-sun.svg";
+  } else {
+    docBody.dataset.theme = "light";
+    themeButton.children[0].setAttribute("src", "images/icon-moon.svg");
+    themeObject.theme = "light";
+    themeObject.iconURL = "images/icon-moon.svg";
+  }
+
+  localStorage.setItem("theme", JSON.stringify(themeObject));
+}
+
+function retrieveTheme() {
+  const themeObject = JSON.parse(localStorage.getItem("theme"));
+
+  docBody.dataset.theme = themeObject.theme;
+  themeButton.children[0].setAttribute("src", themeObject.iconURL);
+}
+
 const taskInput = document.querySelector("[data-add-task]");
 const formElement = taskInput.parentElement;
 const taskList = document.querySelector("[data-task-list]");
@@ -100,6 +128,8 @@ let numTasks = 0;
 taskCount.textContent = numTasks;
 const filterQueries = document.querySelectorAll("[data-filter]");
 const clearCompleted = document.querySelector("[data-clear-completed]");
+const docBody = document.body;
+const themeButton = document.querySelector("[data-theme-button]");
 
 // Task array
 const taskArr = Boolean(localStorage.getItem("task"))
@@ -118,6 +148,8 @@ if (taskArr.length > 0) {
     }
   });
 }
+
+retrieveTheme();
 
 // Add task
 formElement.addEventListener("submit", (e) => {
@@ -199,3 +231,5 @@ clearCompleted.addEventListener("click", () => {
     }
   }
 });
+
+themeButton.addEventListener("click", setTheme);
