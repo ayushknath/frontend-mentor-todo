@@ -123,7 +123,6 @@ function retrieveTheme() {
 }
 
 const taskInput = document.querySelector("[data-add-task]");
-const formElement = taskInput.parentElement;
 const taskList = document.querySelector("[data-task-list]");
 const taskCount = document.querySelector("[data-task-count]");
 let numTasks = 0;
@@ -154,8 +153,8 @@ if (taskArr.length > 0) {
 retrieveTheme();
 
 // Add task
-formElement.addEventListener("submit", (e) => {
-  e.preventDefault();
+taskInput.addEventListener("keypress", (e) => {
+  if (e.key !== "Enter") return;
 
   const task = taskInput.value;
 

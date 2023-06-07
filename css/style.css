@@ -118,12 +118,9 @@ ul {
   padding: 0.25rem;
 }
 
-#input-section form {
-  margin-top: 2rem;
-}
-
-#input-section form input[type="text"] {
+#input-section input[type="text"] {
   width: 100%;
+  margin-top: 2rem;
   padding: 1.5rem 1rem;
   caret-color: var(--primary-100);
   border-radius: var(--rounded-sm);
@@ -271,7 +268,7 @@ ul {
   }
 }
 
-body[data-theme="dark"] #input-section form input[type="text"] {
+body[data-theme="dark"] #input-section input[type="text"] {
   color: #fff;
   background-color: var(--neutral-101);
 }
